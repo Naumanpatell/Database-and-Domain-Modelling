@@ -19,4 +19,4 @@ It is meant to help me (and others) understand SQL concepts, commands, and queri
 - **Indexes**
 - **Transactions**
 - **Normalization (1NF → 3NF, BCNF)**
-- 
+
