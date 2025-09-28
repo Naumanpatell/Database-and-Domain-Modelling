@@ -29,18 +29,3 @@ The module introduces both **SQL** and **Domain Modeling** concepts — from wri
 - ✅ UML for database design  
 
 ---
-
-
-### 🎯 Learning Goals
--By the end of this module, I will be able to:
--Design and normalize relational schemas
--Write efficient SQL queries for real-world problems
--Create ER and UML diagrams for system modeling
--Understand integrity, transactions, and database principles
-
-
-
-### ⭐ Acknowledgements
--University of Leicester – School of Computing & Mathematical Sciences
--Lecturers and Lab Instructors for CO2123 
-
