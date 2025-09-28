@@ -153,3 +153,98 @@ REVOKE INSERT ON employees FROM user1;
 - `LIKE` → pattern matching (`'A%'` → starts with A, `'%son'` → ends with son)
 
 ---
+## 8. Sorting & Grouping
+
+```sql
+SELECT * FROM employees ORDER BY salary DESC;
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
+
+```
+
+---
+
+## 9. Aggregate Functions
+
+- `COUNT(*)` → number of rows
+- `SUM(salary)` → total
+- `AVG(salary)` → average
+- `MIN(salary)` → minimum
+- `MAX(salary)` → maximum
+
+---
+
+## 10. Joins (Combine Tables)
+
+- **INNER JOIN** → common rows from both tables
+
+```sql
+SELECT o.order_id, c.name
+FROM orders o
+INNER JOIN customers c ON o.customer_id = c.id;
+
+```
+
+- **LEFT JOIN** → all rows from left + matching from right
+- **RIGHT JOIN** → all rows from right + matching from left
+- **FULL OUTER JOIN** → all rows from both sides (matches + non-matches)
+- **CROSS JOIN** → Cartesian product (all combinations)
+- **SELF JOIN** → table joins itself
+
+---
+
+## 11. Subqueries
+
+A query inside another query.
+
+```sql
+SELECT name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+```
+
+---
+
+## 12. Views
+
+A **view** is a virtual table based on a query.
+
+```sql
+CREATE VIEW high_salary AS
+SELECT name, salary
+FROM employees
+WHERE salary > 50000;
+
+```
+
+---
+
+## 13. Indexes
+
+Indexes speed up searching (like an index in a book).
+
+```sql
+CREATE INDEX idx_name ON employees(name);
+
+```
+
+---
+
+## 14. Transactions (TCL)
+
+Used to ensure data consistency.
+
+```sql
+START TRANSACTION;
+
+UPDATE accounts SET balance = balance - 100 WHERE id=1;
+UPDATE accounts SET balance = balance + 100 WHERE id=2;
+
+COMMIT;   -- save permanently
+ROLLBACK; -- undo if error
+SAVEPOINT A; -- checkpoint
+
+```
